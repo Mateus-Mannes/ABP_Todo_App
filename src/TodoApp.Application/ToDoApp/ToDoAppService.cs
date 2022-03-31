@@ -18,7 +18,7 @@ namespace TodoApp.ToDoApp
 
         public async Task<List<ToDoItemDto>> GetListAsync()
         {
-            var itens = await _todoItemRepository.GetListAsync();
+            var itens = await _todoItemRepository.GetListAsync(x => x.CurrentUserId == CurrentUser.Id);
             return itens
                 .Select(item => new ToDoItemDto
                 {
@@ -29,7 +29,12 @@ namespace TodoApp.ToDoApp
 
         public async Task<ToDoItemDto> CreateAsync(string text)
         {
-            var item = await _todoItemRepository.InsertAsync(new ToDoItem { Text = text});
+            var item = await _todoItemRepository.InsertAsync(new ToDoItem
+            {
+                Text = text,
+                CurrentUserId = CurrentUser.Id
+            });
+
             return new ToDoItemDto
                 {
                     Id = item.Id,

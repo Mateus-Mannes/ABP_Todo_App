@@ -8,9 +8,9 @@ public class TodoAppPermissionDefinitionProvider : PermissionDefinitionProvider
 {
     public override void Define(IPermissionDefinitionContext context)
     {
-        var myGroup = context.AddGroup(TodoAppPermissions.GroupName);
+        var toDoAppGroup = context.AddGroup(TodoAppPermissions.GroupName, L("Permission:ToDoApp") );
         //Define your own permissions here. Example:
-        //myGroup.AddPermission(TodoAppPermissions.MyPermission1, L("Permission:MyPermission1"));
+        var toDoItemsPermission = toDoAppGroup.AddPermission(TodoAppPermissions.ToDoItems.Default, L("Permission:ToDoApp"));
     }
 
     private static LocalizableString L(string name)

@@ -1,5 +1,8 @@
 ﻿@page
+@using Microsoft.AspNetCore.Authorization
 @model TodoApp.Web.Pages.ToDoApp.IndexModel
+@attribute [Authorize]
+
 @section styles{
     <abp-style src="/Pages/Index.css"/>
 }

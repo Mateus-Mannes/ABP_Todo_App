@@ -13,8 +13,8 @@ using Volo.Abp.EntityFrameworkCore;
 namespace TodoApp.Migrations
 {
     [DbContext(typeof(TodoAppDbContext))]
-    [Migration("20220315231454_Created_TodoItem")]
-    partial class Created_TodoItem
+    [Migration("20220328235953_teste")]
+    partial class teste
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,6 +29,9 @@ namespace TodoApp.Migrations
             modelBuilder.Entity("TodoApp.ToDoApp.ToDoItem", b =>
                 {
                     b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("CurrentUserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Text")

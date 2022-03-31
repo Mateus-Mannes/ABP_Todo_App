@@ -37,6 +37,8 @@ using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.UI;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using TodoApp.Permissions;
 
 namespace TodoApp.Web;
 
@@ -85,6 +87,11 @@ public class TodoAppWebModule : AbpModule
         ConfigureNavigationServices();
         ConfigureAutoApiControllers();
         ConfigureSwaggerServices(context.Services);
+
+        Configure<RazorPagesOptions>(options =>
+        {
+            options.Conventions.AuthorizePage("/ToDoApp", TodoAppPermissions.ToDoItems.Default);
+        });
     }
 
     private void ConfigureUrls(IConfiguration configuration)

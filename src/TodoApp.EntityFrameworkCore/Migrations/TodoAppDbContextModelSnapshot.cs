@@ -29,6 +29,9 @@ namespace TodoApp.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid?>("CurrentUserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Text")
                         .HasColumnType("nvarchar(max)");
 

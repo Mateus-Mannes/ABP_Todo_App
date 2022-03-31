@@ -24,7 +24,8 @@ namespace TodoApp.ToDoApp
                 await _toDoItemRepository.InsertAsync(
                     new ToDoItem
                     {
-                        Text = "Levar o Lixo"
+                        Text = "Levar o Lixo",
+                        CurrentUserId = new Guid("7EF34F1C-C316-970C-2B49-3A02E52A79B3") 
                     },
                     autoSave: true
                 );
@@ -32,7 +33,8 @@ namespace TodoApp.ToDoApp
                 await _toDoItemRepository.InsertAsync(
                     new ToDoItem
                     {
-                        Text = "Fazer trabalho"
+                        Text = "Fazer trabalho",
+                        CurrentUserId = new Guid("7EF34F1C-C316-970C-2B49-3A02E52A79B3")
                     },
                     autoSave: true
                 );

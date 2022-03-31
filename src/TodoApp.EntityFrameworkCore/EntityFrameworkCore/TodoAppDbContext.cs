@@ -14,6 +14,7 @@ using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using TodoApp.ToDoApp;
 using Volo.Abp.EntityFrameworkCore.Modeling;
+using Volo.Abp.Users;
 
 namespace TodoApp.EntityFrameworkCore;
 
